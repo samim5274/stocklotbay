@@ -53,7 +53,7 @@
           <a class="nav-link" href="#">Post Your Add</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">My Account</a>
+          <a class="nav-link" href="myAccount">My Account</a>
         </li>
       </ul>
       <form class="d-flex">
