@@ -39,26 +39,27 @@ include 'menuBar.php';
             
             <!-- Email input -->
             <div data-mdb-input-init class="form-outline mb-4 text-start">
-                <label class="form-label" for="form3Example3">Username</label>
-                <input type="text" id="form3Example3" class="form-control" />              
+                <label class="form-label" for="username">Username</label>
+                <input type="text" name="username" id="username" class="form-control" />              
             </div>
 
             <!-- Password input -->
             <div data-mdb-input-init class="form-outline mb-4 text-start">
-                <label class="form-label" for="form3Example4">Password</label>
-                <input type="password" id="form3Example4" class="form-control" />              
+                <label class="form-label" for="pass">Password</label>
+                <input type="password" name="pass" id="pass" class="form-control" />       
+                <span class="missmatch" id = "messagel1" style="color:green">  <span class="missmatch2" id = "messagel2" style="color:red">        
             </div>
 
             <!-- Checkbox -->
             <div class="form-check d-flex text-start mb-4">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" />
+              <input class="form-check-input me-2" onclick="matchPassword2()" type="checkbox" value="" id="form2Example33" />
               <label class="form-check-label" for="form2Example33">
                 Remember Me
               </label>
             </div>
 
             <!-- Submit button -->
-            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+            <button type="submit" onclick="matchPasswordForLogin()" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
               Login
             </button>
         </div>
@@ -105,13 +106,14 @@ include 'menuBar.php';
             <!-- Password input -->
             <div data-mdb-input-init class="form-outline mb-4 text-start">
                 <label class="form-label" for="form3Example4">Password</label>
-                <input type="password" id="pass1" class="form-control" />                
+                <input type="password" onkeyup="matchPassword()" id="pass1" class="form-control" />                
             </div>
 
             <!-- CPassword input -->
             <div data-mdb-input-init class="form-outline mb-4 text-start">
                 <label class="form-label" for="form3Example7">Confirm Password</label>
-                <input type="password" id="Cpass2" class="form-control" />          <span id = "message1" style="color:red">      
+                <input type="password" onkeyup="matchPassword()" id="Cpass2" class="form-control" />
+                <span class="missmatch" id = "message1" style="color:green">  <span class="missmatch2" id = "message2" style="color:red">     
             </div>
 
             <!-- Checkbox -->
@@ -123,7 +125,7 @@ include 'menuBar.php';
             </div>
 
             <!-- Submit button -->
-            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" onclick="matchPassword()">
+            <button onclick="matchPassword()" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
                 Register
             </button>
           </form>
@@ -133,8 +135,6 @@ include 'menuBar.php';
   </div>
 </section>
 <!-- Section: Design Block -->
-
-
 
 <?php
 include 'footer.php';

@@ -1,5 +1,5 @@
 .btn{
-    background-color: rgb(255, 166, 0);
+    background-color: rgb(255, 153, 0);
     border: none;
     color: #ffffff;
     font-weight: bold;
@@ -7,4 +7,9 @@
 .checked {
     color: orange;
 }
-
+.missmatch{
+    color: #ff0000;
+}
+.missmatch2{
+    color: #00ff62;
+}
