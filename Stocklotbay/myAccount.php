@@ -106,13 +106,13 @@ include 'menuBar.php';
             <!-- Password input -->
             <div data-mdb-input-init class="form-outline mb-4 text-start">
                 <label class="form-label" for="form3Example4">Password</label>
-                <input type="password" onkeyup="matchPassword()" id="pass1" class="form-control" />                
+                <input type="password" id="pass1" class="form-control" />                
             </div>
 
             <!-- CPassword input -->
             <div data-mdb-input-init class="form-outline mb-4 text-start">
                 <label class="form-label" for="form3Example7">Confirm Password</label>
-                <input type="password" onkeyup="matchPassword()" id="Cpass2" class="form-control" />
+                <input type="password" id="Cpass2" class="form-control" />
                 <span class="missmatch" id = "message1" style="color:green">  <span class="missmatch2" id = "message2" style="color:red">     
             </div>
 
@@ -125,7 +125,7 @@ include 'menuBar.php';
             </div>
 
             <!-- Submit button -->
-            <button onclick="matchPassword()" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+            <button onkeyup="passValid()" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
                 Register
             </button>
           </form>
@@ -139,9 +139,6 @@ include 'menuBar.php';
 <?php
 include 'footer.php';
 ?>
-
-
-
 
 
 
