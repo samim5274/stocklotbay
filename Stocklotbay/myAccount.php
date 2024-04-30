@@ -30,12 +30,14 @@ include 'menuBar.php';
     <div class="card-body py-5 px-md-5">
 
       <div class="row d-flex justify-content-center">
-
+          <div class="mb-4">
+            <?php if(isset($_GET['error'])) { ?> <span class="missmatch2" id = "message2" style="color:red"><?php echo $_GET['error']; ?></span> <?php } else { ?><span class="missmatch" id = "message1" style="color:green"> <?php echo $_GET['success']; ?> </span><?php } ?>
+          </div> 
         <!-- user login section -->
 
         <div class="col-lg-6">
             <h2 class="fw-bold mb-5 text-start">Login</h2>
-          <form>
+          <form action="backend" method="post">
             
             <!-- Email input -->
             <div data-mdb-input-init class="form-outline mb-4 text-start">
@@ -52,22 +54,24 @@ include 'menuBar.php';
 
             <!-- Checkbox -->
             <div class="form-check d-flex text-start mb-4">
-              <input class="form-check-input me-2" onclick="matchPassword2()" type="checkbox" value="" id="form2Example33" />
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" />
               <label class="form-check-label" for="form2Example33">
                 Remember Me
               </label>
             </div>
 
             <!-- Submit button -->
-            <button type="submit" onclick="matchPasswordForLogin()" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
               Login
             </button>
+
+            </form>
         </div>
 
         <!-- user registration section -->
 
         <div class="col-lg-6">
-          <h2 class="fw-bold mb-5 text-start">Register</h2>
+          <h2 class="fw-bold mb-5 text-start">Register</h2>         
           <form action="backend" method="post">
             <!-- 2 column grid layout with text inputs for the first and last names -->
             <div class="row">
@@ -117,10 +121,11 @@ include 'menuBar.php';
             </div>
 
             <!-- Image input -->
-            <div data-mdb-input-init class="form-outline mb-4 text-start">
-                <label name="flimage" class="form-label" for="image">Upload your image (Recomended 300 x 300)</label>
-                <input type="file" id="image" class="form-control" />  
+            <!-- <div data-mdb-input-init class="form-outline mb-4 text-start">
+                <label class="form-label" for="image">Upload your image (Recomended 300 x 300)</label>
+                <input name="my_image" type="file" id="image" class="form-control" />  
             </div>
+            <span class="missmatch2" id = "message2" style="color:red">    -->
 
             <!-- Checkbox -->
             <div class="form-check d-flex text-start mb-4">
@@ -131,7 +136,7 @@ include 'menuBar.php';
             </div>
 
             <!-- Submit button -->
-            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+            <button type="submit" name="btnregister" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
                 Register
             </button>
           </form>
